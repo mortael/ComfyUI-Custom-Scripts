@@ -1,7 +1,7 @@
 import ast
 import math
-import random
 import operator as op
+import secrets
 
 operators = {
     ast.Add: op.add,
@@ -44,12 +44,12 @@ functions = {
     },
     "randomint": {
         "args": (2, 2),
-        "call": lambda a, b: random.randint(a, b),
+        "call": lambda a, b: secrets.SystemRandom().randint(a, b),
         "hint": "min, max"
     },
     "randomchoice": {
         "args": (2, None),
-        "call": lambda *args: random.choice(args),
+        "call": lambda *args: secrets.choice(args),
         "hint": "...numbers"
     },
 }
